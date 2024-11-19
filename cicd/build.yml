@@ -50,7 +50,7 @@ jobs:
       testResultsFiles: '**/TESTS-*.xml'
       failTaskOnFailedTests: true
   - task: PublishBuildArtifacts@1
-    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
     displayName: Publish Website Artifacts
     inputs:
       ArtifactName: 'perfectbiteblog'
