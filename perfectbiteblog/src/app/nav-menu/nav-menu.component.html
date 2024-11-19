@@ -1,0 +1,21 @@
+<header>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a id="rootLink" class="navbar-brand" [routerLink]="['/']">The Perfect Bite</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a id="reviewsLink" class="nav-link" [routerLink]="['/reviews']">Reviews</a></li>
+          <li class="nav-item"><a id="recipesLink" class="nav-link" [routerLink]="['/recipes']">Recipes</a></li>
+        </ul>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="leftLinks">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a id="aboutLink" class="nav-link" [routerLink]="['/about']">About Christine</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

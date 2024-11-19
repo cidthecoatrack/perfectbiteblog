@@ -1,0 +1,8 @@
+<h1>Recipes</h1>
+<p class="text-justify">Check out the awesome recipes!</p>
+
+<ul>
+    @for (recipe of recipes; track $index) {
+        <li><a [routerLink]="[recipe.route]">{{recipe.date | date:'shortDate'}}: {{recipe.title}}</a></li>
+    }
+</ul>

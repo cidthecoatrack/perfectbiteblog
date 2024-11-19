@@ -1,0 +1,59 @@
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+jobs:
+# The Perfect Bite Website
+- job: PerfectBite_Web
+  displayName: The Perfect Bite Website
+  steps:
+  - checkout: self
+    displayName: 'Checkout Code'
+    persistCredentials: true
+  - task: UseNode@1
+    displayName: 'Install node.js'
+    inputs:
+      version: '20.x'
+  - task: Npm@1  
+    displayName: 'Install Angular CLI'  
+    inputs:  
+      command: custom  
+      verbose: true  
+      customCommand: 'install -g @angular/cli'
+  - task: Npm@1  
+    displayName: 'npm install'  
+    inputs:
+      workingDir: '$(Build.SourcesDirectory)/perfectbiteblog'
+      verbose: true  
+      command: install
+  - task: Npm@1  
+    displayName: Build  
+    inputs: 
+      command: custom
+      workingDir: '$(Build.SourcesDirectory)/perfectbiteblog'
+      verbose: true  
+      customCommand: 'run build:ci'
+  - task: Npm@1  
+    displayName: Run Tests
+    inputs: 
+      command: custom
+      workingDir: '$(Build.SourcesDirectory)/perfectbiteblog'
+      verbose: true  
+      customCommand: 'run test:ci'
+  - task: PublishTestResults@2
+    displayName: 'Publish Test Results'
+    condition: always()
+    inputs:
+      testResultsFiles: '**/TESTS-*.xml'
+      failTaskOnFailedTests: true
+  - task: PublishBuildArtifacts@1
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    displayName: Publish Website Artifacts
+    inputs:
+      ArtifactName: 'perfectbiteblog'
+      PathtoPublish: '$(Build.SourcesDirectory)/perfectbiteblog/dist'
+      publishLocation: 'Container'
+      

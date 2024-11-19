@@ -1,0 +1,8 @@
+<h1>Reviews</h1>
+<p class="text-justify">Check out the awesome reviews!</p>
+
+<ul>
+    @for (review of reviews; track $index) {
+        <li><a [routerLink]="[review.route]">{{review.date | date:'shortDate'}}: {{review.title}}</a></li>
+    }
+</ul>

@@ -1,0 +1,34 @@
+trigger: none
+pr: none
+
+resources:
+  pipelines:
+  - pipeline: perfectbiteblog
+    source: 'Perfect Bite Blog - Build'
+    trigger: 
+      branches:
+      - main
+
+jobs:
+
+# The Perfect Bite Blog
+- deployment: Website
+  displayName: Deploy Website
+  pool:
+    vmImage: 'ubuntu-latest'
+  environment: Prod
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+        - task: AzureStaticWebApp@0
+          displayName: 'Azure Static Web App Deploy: perfectbiteblog'
+          retryCountOnTaskFailure: 3
+          inputs:
+            cwd: '$(Pipeline.Workspace)/perfectbiteblog/perfectbiteblog'
+            app_location: '/perfectbiteblog/browser'
+            output_location: ''
+            skip_app_build: true
+            skip_api_build: true
+            verbose: true
+            azure_static_web_apps_api_token: '$(deployment_token)'
