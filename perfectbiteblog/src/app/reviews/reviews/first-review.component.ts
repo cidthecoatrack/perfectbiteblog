@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { Review } from './models/review.model';
+import { Review } from '.././models/review.model';
+import { DatePipe } from '@angular/common';
 
 @Component({
     selector: 'perfectbite-review-first',
     templateUrl: './first-review.component.html',
     standalone: true,
+    providers: [DatePipe],
+    imports: [DatePipe]
 })
 export class FirstReviewComponent {
     public static get review(): Review { 

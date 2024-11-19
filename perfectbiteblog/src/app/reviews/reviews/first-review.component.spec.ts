@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TestHelper } from '../testHelper.spec';
+import { TestHelper } from '../../testHelper.spec';
 import { FirstReviewComponent } from './first-review.component';
 
 describe('First Review Component', () => {

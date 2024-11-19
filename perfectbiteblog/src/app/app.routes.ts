@@ -3,8 +3,8 @@ import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
 import { AboutComponent } from './about/about.component';
 import { ReviewsComponent } from './reviews/reviews.component';
-import { FirstReviewComponent } from './reviews/first-review.component';
-import { FirstRecipeComponent } from './recipes/first-recipe.component';
+import { FirstReviewComponent } from './reviews/reviews/first-review.component';
+import { FirstRecipeComponent } from './recipes/recipes/first-recipe.component';
 import { RecipesComponent } from './recipes/recipes.component';
 
 export const routes: Routes = [

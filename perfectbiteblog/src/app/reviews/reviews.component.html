@@ -3,6 +3,6 @@
 
 <ul>
     @for (review of reviews; track $index) {
-        <li><a [routerLink]="[review.route]">{{review.date | date:'shortDate'}}: {{review.title}}</a></li>
+        <li><a [routerLink]="['/' + review.route]">{{review.date | date:'shortDate'}}: {{review.title}}</a></li>
     }
 </ul>

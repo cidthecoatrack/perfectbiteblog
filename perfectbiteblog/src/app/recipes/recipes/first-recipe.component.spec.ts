@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TestHelper } from '../testHelper.spec';
+import { TestHelper } from '../../testHelper.spec';
 import { FirstRecipeComponent } from './first-recipe.component';
 
 describe('First Recipe Component', () => {

@@ -2,9 +2,9 @@ import { AboutComponent } from './about/about.component';
 import { routes } from './app.routes';
 import { ErrorComponent } from './error/error.component';
 import { HomeComponent } from './home/home.component';
-import { FirstRecipeComponent } from './recipes/first-recipe.component';
+import { FirstRecipeComponent } from './recipes/recipes/first-recipe.component';
 import { RecipesComponent } from './recipes/recipes.component';
-import { FirstReviewComponent } from './reviews/first-review.component';
+import { FirstReviewComponent } from './reviews/reviews/first-review.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 
 describe('App Routes', () => {

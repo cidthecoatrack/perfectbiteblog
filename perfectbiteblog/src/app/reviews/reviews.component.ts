@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Review } from './models/review.model';
 import { DatePipe } from '@angular/common';
-import { FirstReviewComponent } from './first-review.component';
+import { FirstReviewComponent } from './reviews/first-review.component';
 
 @Component({
     selector: 'perfectbite-reviews',

@@ -3,6 +3,6 @@
 
 <ul>
     @for (recipe of recipes; track $index) {
-        <li><a [routerLink]="[recipe.route]">{{recipe.date | date:'shortDate'}}: {{recipe.title}}</a></li>
+        <li><a [routerLink]="['/' + recipe.route]">{{recipe.date | date:'shortDate'}}: {{recipe.title}}</a></li>
     }
 </ul>

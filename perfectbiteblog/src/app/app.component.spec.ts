@@ -3,7 +3,7 @@ import { AppComponent } from './app.component';
 import { TestHelper } from './testHelper.spec';
 import { RouterTestingHarness } from '@angular/router/testing';
 
-fdescribe('AppComponent', () => {
+describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let helper: TestHelper<AppComponent>;
 
@@ -26,7 +26,7 @@ fdescribe('AppComponent', () => {
   
   it('should render the navigation bar', () => {
     fixture.detectChanges();
-    helper.expectLink('a.navbar-brand', 'DnDGen', '/', false);
+    helper.expectLink('a.navbar-brand', 'The Perfect Bite', '/', false);
   });
 
   it('should render the router outlet', () => {

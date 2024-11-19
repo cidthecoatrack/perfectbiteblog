@@ -4,7 +4,7 @@ pr: none
 resources:
   pipelines:
   - pipeline: perfectbiteblog
-    source: 'Perfect Bite Blog - Build'
+    source: 'Perfect Bite - Build'
     trigger: 
       branches:
       - main

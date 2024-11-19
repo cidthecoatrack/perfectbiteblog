@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Recipe } from './models/recipe.model';
 import { DatePipe } from '@angular/common';
-import { FirstRecipeComponent } from './first-recipe.component';
+import { FirstRecipeComponent } from './recipes/first-recipe.component';
 
 @Component({
     selector: 'perfectbite-recipes',
